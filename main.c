@@ -18,10 +18,28 @@ int main()
 	ft_putchar('\n');
 
 	char bye[] = "bye!";
+	ft_memcpy(helloWorld, bye, 4);
 	ft_putstr("ft_memcpy():\t"); 
-	memcpy(helloWorld, bye, 4);
 	for (int i = 0; i < 11; i++)
 		(helloWorld[i]?ft_putchar(helloWorld[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	ft_memmove(bye, helloWorld, 10);
+	ft_putstr("ft_memmove():\t"); 
+	for (int i = 0; i < 11; i++)
+		(bye[i]?ft_putchar(bye[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	char *memch = ft_memchr(helloWorld, '*', 5);
+	ft_putstr("ft_memchr():\t");
+	for (int i = 0; i < 11; i++)
+		(bye[i]?ft_putchar(memch[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	char randomWord1[] = "randomWord1";
+	char randomWord3[] = "randomWord3";
+	ft_putstr("ft_memcmp(2):\t");
+	ft_putnbr(ft_memcmp(randomWord1, randomWord3, 10));
 	ft_putchar('\n');
 
 	char testcpy[11];
@@ -69,10 +87,10 @@ int main()
 	ft_putchar(' '); ft_putnbr(szt); ft_putchar('\n');
 
 	char testchr[20] = "Where is cheater?";
-	ft_putstr("ft_strchr():\t");
+	ft_putstr("ft_strchr(c):\t");
 	ft_putendl(ft_strchr(testchr, 'c'));
 
-	ft_putstr("ft_strrchr():\t");
+	ft_putstr("ft_strrchr(W):\t");
 	ft_putendl(ft_strrchr(testchr, 'W'));
 
 
@@ -80,5 +98,9 @@ int main()
 	ft_putnbr(ft_strcmp("a", "abc"));
 	ft_putchar('\n');
 	
+	ft_putstr("ft_strcmp(abc, abc):\t");
+	ft_putnbr(ft_strcmp("abc", "abc"));
+	ft_putchar('\n');
+
 	return (0);
 }

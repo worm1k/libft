@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 13:52:48 by abykov            #+#    #+#             */
-/*   Updated: 2016/11/21 13:52:48 by abykov           ###   ########.fr       */
+/*   Created: 2016/11/21 14:07:28 by abykov            #+#    #+#             */
+/*   Updated: 2016/11/21 14:07:29 by abykov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				ft_bzero(void *b, size_t n)
+void					*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char	*p;
+	int					i;
+	unsigned char		*d;
+	const unsigned char *s;
+	unsigned char		*temp;
 
-	p = b;
-	while(n > 0)
+	temp = (char *) malloc(sizeof(char) * n);
+	d = (unsigned char *) dst;
+	s = (unsigned char *) src;
+	i = 0;
+	while(i < n)
 	{
-		*p = 0;
-		p++;
-		n--;
+		temp[i] = s[i];
+		i++;
 	}
+	i = 0;
+	while(i < n)
+	{
+		d[i] = temp[i];
+		i++;
+	}
+
+	free(temp);
+	return (dst);
 }
