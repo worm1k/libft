@@ -68,8 +68,17 @@ int main()
 		(testlcat[i]?ft_putchar(testlcat[i]): ft_putchar('0'));
 	ft_putchar(' '); ft_putnbr(szt); ft_putchar('\n');
 
+	char testchr[20] = "Where is cheater?";
+	ft_putstr("ft_strchr():\t");
+	ft_putendl(ft_strchr(testchr, 'c'));
+
+	ft_putstr("ft_strrchr():\t");
+	ft_putendl(ft_strrchr(testchr, 'W'));
 
 
-
+	ft_putstr("ft_strcmp(a, abc):\t");
+	ft_putnbr(ft_strcmp("a", "abc"));
+	ft_putchar('\n');
+	
 	return (0);
 }
