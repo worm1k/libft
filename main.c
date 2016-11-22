@@ -47,12 +47,29 @@ int main()
 	ft_putchar('\n');
 
 	char testncat[11] = "Hello\0\0\0OK";
-	char *bug = "BUG";
 	ft_putstr("ft_strcat():\t"); 
 	ft_strncat(testncat, "Wo", 5);
 	for (int i = 0; i < 11; i++)
 		(testncat[i]?ft_putchar(testncat[i]): ft_putchar('0'));
 	ft_putchar('\n');
+
+	int szt;
+
+	char testlcat[11] = "Hello";
+	ft_putstr("ft_strlcat(7):\t"); 
+	szt = ft_strlcat(testlcat, "Wo", 11);
+	for (int i = 0; i < 11; i++)
+		(testlcat[i]?ft_putchar(testlcat[i]): ft_putchar('0'));
+	ft_putchar(' '); ft_putnbr(szt); ft_putchar('\n');
+
+	ft_putstr("ft_strlcat(11):\t"); 
+	szt = ft_strlcat(testlcat, "rld!!!!!!!!!!!!!!!!!!!!!!!!!!!!", 11);
+	for (int i = 0; i < 11; i++)
+		(testlcat[i]?ft_putchar(testlcat[i]): ft_putchar('0'));
+	ft_putchar(' '); ft_putnbr(szt); ft_putchar('\n');
+
+
+
 
 	return (0);
 }

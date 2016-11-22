@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 16:50:42 by abykov            #+#    #+#             */
-/*   Updated: 2016/11/22 16:50:42 by abykov           ###   ########.fr       */
+/*   Created: 2016/11/22 17:03:56 by abykov            #+#    #+#             */
+/*   Updated: 2016/11/22 17:03:56 by abykov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	int	i;
 	int	j;
+	int	len;
 
 	i = 0;
 	j = 0;
-	while (s1[i])
-	{
+	len = ft_strlen(dst);
+	while (dst[i] && i < size)
 		i++;
-	}
-	while (s2[j] && j < n)
+
+	while (src[j] && j < size - len - 1)
 	{
-		s1[i] = s2[j];
+		dst[i] = src[j];
 		i++;
 		j++;
 	}
-
-	s1[i] = '\0';
-	return (s1);
+	if (j == size - len - 1 && src[j] != '\0')
+		return (size);
+	else
+	{
+		dst[i] = '\0';
+		return (len + ft_strlen(src));
+	}
 }
