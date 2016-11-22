@@ -18,11 +18,19 @@ int main()
 	ft_putchar('\n');
 
 	char bye[] = "bye!";
+	ft_putstr("ft_memcpy():\t"); 
 	memcpy(helloWorld, bye, 4);
 	for (int i = 0; i < 11; i++)
 		(helloWorld[i]?ft_putchar(helloWorld[i]): ft_putchar('0'));
 	ft_putchar('\n');
 
+	char testcpy[11];
+	ft_putstr("ft_strcpy():\t");
+	ft_strcpy(testcpy, "HelloWorld");
+	ft_putendl(testcpy);
+
+	ft_putstr("ft_strdup():\t");
+	ft_putendl(ft_strdup("HelloWorld"));
 
 	return (0);
 }
