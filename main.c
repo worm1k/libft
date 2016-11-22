@@ -32,5 +32,27 @@ int main()
 	ft_putstr("ft_strdup():\t");
 	ft_putendl(ft_strdup("HelloWorld"));
 
+	char testncpy[11] = "HelloWorld";
+	ft_putstr("ft_strncpy():\t"); 
+	ft_strncpy(testncpy, "Bye", 5);
+	for (int i = 0; i < 11; i++)
+		(testncpy[i]?ft_putchar(testncpy[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	char testcat[11] = "Hello";
+	ft_putstr("ft_strcat():\t"); 
+	ft_strcat(testcat, "World");
+	for (int i = 0; i < 11; i++)
+		(testcat[i]?ft_putchar(testcat[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	char testncat[11] = "Hello\0\0\0OK";
+	char *bug = "BUG";
+	ft_putstr("ft_strcat():\t"); 
+	ft_strncat(testncat, "Wo", 5);
+	for (int i = 0; i < 11; i++)
+		(testncat[i]?ft_putchar(testncat[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
 	return (0);
 }
