@@ -1,16 +1,21 @@
+NAME = a
+
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRC = *.c
+
+OBJ = $(SRC:.c=.o)
 
 
-$(NAME):
-	all
-
-all:
-	all
-
+all: $(NAME)
+	echo "dick"
+$(NAME): 
+	gcc -o a $(SRC)
 clean:
-	clean
+	rm -rf *.o
 
-fclean:
-	fclean
+fclean: clean
+	rm -rf a
 
-re:
-	re
+re: fclean all
+	echo "dick"
