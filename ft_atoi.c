@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/22 16:44:59 by abykov            #+#    #+#             */
-/*   Updated: 2016/11/22 16:45:00 by abykov           ###   ########.fr       */
+/*   Created: 2016/11/22 18:45:10 by abykov            #+#    #+#             */
+/*   Updated: 2016/11/22 18:45:10 by abykov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strcat(char *s1, const char *s2)
+int		ft_atoi(const char *nptr)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	res;
+	int	sign;
 
 	i = 0;
-	j = 0;
-	while (s1[i])
+	res = 0;
+	sign = 1;
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\v')
+		i++;
+	if(nptr[i] == '+')
+		i++;
+	else if (nptr[i] == '-')
 	{
+		sign = -1;
 		i++;
 	}
-	while (s2[j])
+	while (nptr[i] && '0' <= nptr[i] && nptr[i] <= '9')
 	{
-		s1[i] = s2[j];
+		res = res * 10 + nptr[i] - '0';
 		i++;
-		j++;
 	}
-
-	s1[i] = '\0';
-	return (s1);
+	return (sign*res);
 }

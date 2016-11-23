@@ -102,5 +102,44 @@ int main()
 	ft_putnbr(ft_strcmp("abc", "abc"));
 	ft_putchar('\n');
 
+	ft_putstr("ft_strncmp(abcd, abc, 3):\t");
+	ft_putnbr(ft_strncmp("abcd", "abc", 3));
+	ft_putchar('\n');
+
+	ft_putstr("ft_strstr(strstr is awesome):\t");
+	ft_putendl(ft_strstr("My ft_strstr is awesome", "strstr"));
+
+	ft_putstr("ft_strnstr(strstr is awesome):\t");
+	char *ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 7);
+	ft_putendl(ptr == NULL?"NULL":ptr);
+
+	ft_putstr("ft_strnstr(NULL):\t");
+	ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 6);
+	ft_putendl(ptr == NULL?"NULL":ptr);
+
+	ft_putstr("ft_atoi(-42):\t\t");
+	ft_putnbr(ft_atoi("-42"));
+	ft_putchar('\n');
+
+	ft_putstr("ft_atoi( \\t+42):\t");
+	ft_putnbr(ft_atoi(" 	+42"));
+	ft_putchar('\n');
+
+	ft_putstr("ft_atoi(-+42):\t\t");
+	ft_putnbr(ft_atoi("-+42"));
+	ft_putchar('\n');
+
+	ft_putstr("ft_atoi(+-42):\t\t");
+	ft_putnbr(ft_atoi("+-42"));
+	ft_putchar('\n');
+
+	ft_putstr("ft_atoi(- 42):\t\t");
+	ft_putnbr(ft_atoi("- 42"));
+	ft_putchar('\n');
+
+	ft_putstr("ft_atoi(+ 42):\t\t");
+	ft_putnbr(ft_atoi("+ 42"));
+	ft_putchar('\n');
+
 	return (0);
 }
