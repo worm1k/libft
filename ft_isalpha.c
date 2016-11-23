@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,26 +12,9 @@
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
+int	ft_isalpha(int c)
 {
-	int i;
-	int j;
-
-	if (!needle)
-		return ((char *) haystack);
-	if (!haystack || !haystack[0])
-		return (0);
-	i = 0;
-	while (haystack[i] && i + ft_strlen(needle) - 1 < len)
-	{
-		j = 0;
-		while (haystack[i + j] == needle[j])
-		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&(haystack[i]));
-			j++;
-		}
-		i++;
-	}
-	return (NULL);
+	if ('a' <= c && c <= 'z' ||	'A' <= c && c <= 'Z')
+		return (1);
+	return (0);
 }

@@ -110,11 +110,11 @@ int main()
 	ft_putendl(ft_strstr("My ft_strstr is awesome", "strstr"));
 
 	ft_putstr("ft_strnstr(strstr is awesome):\t");
-	char *ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 7);
+	char *ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 13);
 	ft_putendl(ptr == NULL?"NULL":ptr);
 
 	ft_putstr("ft_strnstr(NULL):\t");
-	ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 6);
+	ptr = ft_strnstr("My ft_strstr is awesome", "strstr", 11);
 	ft_putendl(ptr == NULL?"NULL":ptr);
 
 	ft_putstr("ft_atoi(-42):\t\t");
@@ -140,6 +140,94 @@ int main()
 	ft_putstr("ft_atoi(+ 42):\t\t");
 	ft_putnbr(ft_atoi("+ 42"));
 	ft_putchar('\n');
+
+	ft_putstr("ft_isalpha(a):\t\t");
+	ft_putnbr(ft_isalpha('a'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalpha(A):\t\t");
+	ft_putnbr(ft_isalpha('A'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalpha(8):\t\t");
+	ft_putnbr(ft_isalpha('8'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isdigit(0):\t\t");
+	ft_putnbr(ft_isdigit('0'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isdigit(a):\t\t");
+	ft_putnbr(ft_isdigit('a'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalnum(a):\t\t");
+	ft_putnbr(ft_isalnum('a'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalnum(A):\t\t");
+	ft_putnbr(ft_isalnum('A'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalnum(8):\t\t");
+	ft_putnbr(ft_isalnum('8'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isalnum(\' \'):\t");
+	ft_putnbr(ft_isalnum(' '));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isprint(31):\t\t");
+	ft_putnbr(ft_isprint(31));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isprint(32):\t\t");
+	ft_putnbr(ft_isprint(32));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isprint(126):\t");
+	ft_putnbr(ft_isprint(126));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isprint(127):\t");
+	ft_putnbr(ft_isprint(127));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isascii(-1):\t\t");
+	ft_putnbr(ft_isascii(-1));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isascii(0):\t\t");
+	ft_putnbr(ft_isascii(0));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isascii(127):\t");
+	ft_putnbr(ft_isascii(127));
+	ft_putchar('\n');
+
+	ft_putstr("ft_isascii(128):\t");
+	ft_putnbr(ft_isascii(128));
+	ft_putchar('\n');
+
+	ft_putstr("ft_toupper(a):\t\t");
+	ft_putchar(ft_toupper('a'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_toupper(A):\t\t");
+	ft_putchar(ft_toupper('A'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_tolower(a):\t\t");
+	ft_putchar(ft_tolower('a'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_tolower(a):\t\t");
+	ft_putchar(ft_tolower('A'));
+	ft_putchar('\n');
+
+
+
+
 
 	return (0);
 }
