@@ -14,11 +14,11 @@
 
 char		*ft_strnew(size_t size)
 {
-	char	*res
+	char	*res;
 	size_t	i;
 
 	i = 0;
-	res = malloc(size);
+	res = (char *)malloc(size);
 	if (!res)
 		return (NULL);
 	while (i < size)

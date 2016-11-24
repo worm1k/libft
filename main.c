@@ -247,8 +247,11 @@ int main()
 		ft_putnbr(sizeof(ap[i]));
 	ft_putchar('\n');
 
-	char *testnew = ft_strnew(10);
 	ft_putstr("ft_strnew():\t\t");
+	char *testnew = ft_strnew(10);
+	for (int i = 0; i < 11; i++)
+		(testnew[i]?ft_putnbr(testnew[i]): ft_putchar('0'));
+	ft_putchar('\n');
 
 
 
