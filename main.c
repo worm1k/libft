@@ -225,6 +225,31 @@ int main()
 	ft_putchar(ft_tolower('A'));
 	ft_putchar('\n');
 
+	char *testalloc = ft_memalloc(11);
+	ft_putstr("ft_memalloc(0):\t\t");
+	for (int i = 0; i < 11; i++)
+		(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	ft_putstr("ft_memalloc(A):\t\t");
+	ft_memset(testalloc, 'A', 11);
+	for (int i = 0; i < 11; i++)
+		(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	char **ap = (char **)malloc(sizeof(char*) * 3);
+	ap[0] = ft_memalloc(5);
+	ap[1] = ft_memalloc(5);
+	ap[2] = NULL;
+	ft_putstr("ft_memdel():\t\t");
+	ft_memdel((void *)ap);
+	for(int i = 0; i < 3; i++)
+		ft_putnbr(sizeof(ap[i]));
+	ft_putchar('\n');
+
+	char *testnew = ft_strnew(10);
+	ft_putstr("ft_strnew():\t\t");
+
 
 
 

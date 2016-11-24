@@ -3,5 +3,5 @@
 *~
 a
 a.out
-*.exe
+*.exe*
 libft.h.gch
