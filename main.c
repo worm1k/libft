@@ -225,13 +225,8 @@ int main()
 	ft_putchar(ft_tolower('A'));
 	ft_putchar('\n');
 
-	char *testalloc = ft_memalloc(11);
-	ft_putstr("ft_memalloc(0):\t\t");
-	for (int i = 0; i < 11; i++)
-		(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
-	ft_putchar('\n');
-
 	ft_putstr("ft_memalloc(A):\t\t");
+	char *testalloc = ft_memalloc(11);
 	ft_memset(testalloc, 'A', 11);
 	for (int i = 0; i < 11; i++)
 		(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
@@ -249,10 +244,56 @@ int main()
 	ft_putstr("ft_strnew():\t\t");
 	char *testnew = ft_strnew(11);
 	for (int i = 0; i < 11; i++)
-		(testnew[i]?ft_putnbr(testnew[i]): ft_putchar('0'));
+		(testnew[i]?ft_putchar(testnew[i]): ft_putchar('0'));
 	ft_putchar('\n');
 
+	ft_putstr("ft_strdel()):\t\t");
+	ft_memdel((void **)&testnew);
+	if (testnew)
+		for (int i = 0; i < 11; i++)
+			(testnew[i]?ft_putchar(testnew[i]): ft_putchar('0'));
+	else
+		ft_putstr("NULL");
+	ft_putchar('\n');
 
+	ft_putstr("ft_strclr()):\t\t");
+	char testclr[11] = "HelloWorld";
+	ft_strclr(testclr);
+	for (int i = 0; i < 11; i++)
+		(testclr[i]?ft_putchar(testclr[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+	void ftt_toupper(char *c) {if ('a' <= *c && *c <= 'z') *c = *c - 'a' + 'A';}
+	ft_putstr("ft_striter():\t\t");
+	char testiter[11] = "HelloWorld";
+	ft_striter(testiter, &ftt_toupper);
+	ft_putendl(testiter);
+
+	void fti_toupper(unsigned int i, char *c) {if ('a' <= *c && *c <= 'z') *c = *c - 'a' + 'A';}
+	ft_putstr("ft_striteri():\t\t");
+	char testiteri[11] = "HelloWorld";
+	ft_striteri(testiteri, &fti_toupper);
+	ft_putendl(testiteri);
+
+	char f_toupper(char c)
+	{
+		if ('a' <= c && c <= 'z')
+			return (c - 'a' + 'A');
+		return (c);
+	}
+	ft_putstr("ft_strmap():\t\t");
+	char testmap[11] = "HelloWorld";
+	ft_putendl(ft_strmap(testmap, &f_toupper));
+
+	char fi_toupper(unsigned int i, char c)
+	{
+		if ('a' <= c && c <= 'z')
+			return (c - 'a' + 'A');
+		return (c);
+	}
+	ft_putstr("ft_strmapi():\t\t");
+	char testmapi[11] = "HelloWorld";
+	ft_putendl(ft_strmapi(testmapi, &fi_toupper));
 
 
 
