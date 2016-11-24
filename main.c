@@ -237,18 +237,17 @@ int main()
 		(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
 	ft_putchar('\n');
 
-	char **ap = (char **)malloc(sizeof(char*) * 3);
-	ap[0] = ft_memalloc(5);
-	ap[1] = ft_memalloc(5);
-	ap[2] = NULL;
-	ft_putstr("ft_memdel():\t\t");
-	ft_memdel((void *)ap);
-	for(int i = 0; i < 3; i++)
-		ft_putnbr(sizeof(ap[i]));
+	ft_putstr("ft_memdel()):\t\t");
+	ft_memdel((void **)&testalloc);
+	if (testalloc)
+		for (int i = 0; i < 11; i++)
+			(testalloc[i]?ft_putchar(testalloc[i]): ft_putchar('0'));
+	else
+		ft_putstr("NULL");
 	ft_putchar('\n');
 
 	ft_putstr("ft_strnew():\t\t");
-	char *testnew = ft_strnew(10);
+	char *testnew = ft_strnew(11);
 	for (int i = 0; i < 11; i++)
 		(testnew[i]?ft_putnbr(testnew[i]): ft_putchar('0'));
 	ft_putchar('\n');
