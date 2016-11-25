@@ -318,5 +318,9 @@ int main()
 	}
 	ft_putchar('\n');
 
+	ft_putstr("ft_itoa():\t\t");
+	ft_putendl(ft_itoa(-2147483647));
+	ft_putstr("ft_itoa():\t\t");
+	ft_putendl(ft_itoa(-2147483648));
 	return (0);
 }
