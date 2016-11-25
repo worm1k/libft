@@ -298,6 +298,9 @@ int main()
 	ft_putstr("ft_strjoin(HelloWorld):\t");
 	ft_putendl(ft_strjoin("Hello", "World"));
 
+	ft_putstr("ft_strtrim():\t\t");
+	ft_putendl(ft_strtrim("   Hello World    "));
+
 
 
 	return (0);

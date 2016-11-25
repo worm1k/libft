@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,21 +12,18 @@
 
 #include "libft.h"
 
-char		*ft_strmap(char const *s, char (*f)(char))
+char		*ft_strtrim(char const *s)
 {
-	size_t	i;
-	size_t	len;
 	char	*res;
+	size_t	a;
+	size_t	b;
 
-	len = ft_strlen(s);
-	res = ft_strnew(len + 1);
-	if (!res)
-		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		res[i] = (*f)(s[i]);
-		i++;
-	}
+	a = 0;
+	while (s[a] == ' ' || s[a] == '\n' || s[a] == '\t')
+		a++;
+	b = ft_strlen(s) - 1;
+	while (s[b] == ' ' || s[b] == '\n' || s[b] == '\t')
+		b--;
+	res = ft_strsub(s, a, b - a + 1);
 	return (res);
 }
