@@ -301,7 +301,22 @@ int main()
 	ft_putstr("ft_strtrim():\t\t");
 	ft_putendl(ft_strtrim("   Hello World    "));
 
-
+	ft_putstr("ft_strsplit():\t\t");
+	char **testsplit = ft_strsplit("hello*fellow***students", '*');
+	for (int i = 0; testsplit[i]; i++)
+	{
+		(i!=0)?ft_putchar('*'):0;
+		ft_putstr(testsplit[i]);
+	}
+	ft_putchar('\n');
+	ft_putstr("ft_strsplit():\t\t");
+	char **testsplit2 = ft_strsplit("*hello*fellow***students*", '*');
+	for (int i = 0; testsplit2[i]; i++)
+	{
+		(i!=0)?ft_putchar('*'):0;
+		ft_putstr(testsplit2[i]);
+	}
+	ft_putchar('\n');
 
 	return (0);
 }

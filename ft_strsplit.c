@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,18 +12,61 @@
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s)
+char		*ftt_strdup(char const *s, char c)
 {
 	char	*res;
-	size_t	a;
-	size_t	b;
+	size_t	i;
 
-	a = 0;
-	while (s[a] == ' ' || s[a] == '\n' || s[a] == '\t')
-		a++;
-	b = ft_strlen(s) - 1;
-	while (s[b] == ' ' || s[b] == '\n' || s[b] == '\t')
-		b--;
-	res = ft_strsub(s, a, b - a + 1);
+	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	i = 0;
+	while (s[i] != c && s[i])
+	{
+		res[i] = s[i];
+		i++;
+	}
+	res[i] = '\0';
+	return (res);
+}
+
+size_t		ftt_getsize(char const *s, char c)
+{
+	size_t	i;
+	size_t	size;
+
+	i = 0;
+	size = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			size++;
+		while (s[i] != c && s[i])
+			i++;
+	}
+	return (size);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	char	**res;
+	size_t	i;
+	size_t	j;
+
+	res = (char **)malloc(sizeof(char *) * ftt_getsize(s,c) + 1);
+	if (!res)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != '\0')
+			res[j++] = ftt_strdup(s + i, c);
+		while (s[i] != c && s[i])
+			i++;
+	}
+	res[j] = (NULL);
 	return (res);
 }
