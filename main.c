@@ -292,7 +292,11 @@ int main()
 	ft_putnbr(ft_strnequ("Helloe", "Helloa", 6));
 	ft_putchar('\n');
 
+	ft_putstr("ft_strsub(World):\t");
+	ft_putendl(ft_strsub("HelloWorld!!", 5, 5));
 
+	ft_putstr("ft_strjoin(HelloWorld):\t");
+	ft_putendl(ft_strjoin("Hello", "World"));
 
 
 
