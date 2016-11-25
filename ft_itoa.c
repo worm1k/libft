@@ -36,6 +36,8 @@ char		*ft_itoa(int n)
 
 	i = ftt_getrank(n) - 1;
 	res = ft_strnew(i + 2);
+	if (!res)
+		return (NULL);
 	if (n == -2147483648)
 		return  (ft_strcpy(res, "-2147483648"));
 	if (n == 0)

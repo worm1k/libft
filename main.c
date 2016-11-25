@@ -322,5 +322,10 @@ int main()
 	ft_putendl(ft_itoa(-2147483647));
 	ft_putstr("ft_itoa():\t\t");
 	ft_putendl(ft_itoa(-2147483648));
+
+	int testfd = open("testfd.txt", O_CREAT | O_WRONLY);
+	ft_putnbr_fd(42, testfd);
+	ft_putendl_fd("UNIT test", testfd);
+	close(testfd);
 	return (0);
 }
