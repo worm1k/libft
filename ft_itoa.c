@@ -17,11 +17,11 @@ size_t		ftt_getrank(int n)
 	int		negative;
 	size_t	res;
 
-	negative = (n < 0)?1:0;
+	negative = (n < 0) ? 1 : 0;
 	if (n == 0)
 		return (1);
 	res = 0;
-	while(n)
+	while (n)
 	{
 		res++;
 		n /= 10;
@@ -39,7 +39,7 @@ char		*ft_itoa(int n)
 	if (!res)
 		return (NULL);
 	if (n == -2147483648)
-		return  (ft_strcpy(res, "-2147483648"));
+		return (ft_strcpy(res, "-2147483648"));
 	if (n == 0)
 		return (ft_strcpy(res, "0"));
 	if (n < 0)

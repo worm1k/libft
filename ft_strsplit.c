@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -53,7 +53,7 @@ char		**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	res = (char **)malloc(sizeof(char *) * ftt_getsize(s,c) + 1);
+	res = (char **)malloc(sizeof(char *) * ftt_getsize(s, c) + 1);
 	if (!res)
 		return (NULL);
 	i = 0;

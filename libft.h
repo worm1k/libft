@@ -9,11 +9,12 @@
 /*   Updated: 2016/11/21 10:55:36 by abykov           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef _LIBFT_H_
-# define _LIBFT_H_
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
+
+#ifndef LIBFT_H
+# define LIBFT_H
+# include <stdlib.h>
+# include <unistd.h>
+# include <string.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);

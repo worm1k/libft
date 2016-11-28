@@ -8,7 +8,7 @@ OBJ = $(SRC:.c=.o)
 
 
 all: $(NAME)
-	echo "dick"
+	@echo ""
 $(NAME): 
 	gcc -o a $(SRC)
 clean:
@@ -18,4 +18,4 @@ fclean: clean
 	rm -rf a
 
 re: fclean all
-	echo "dick"
+	@echo "Done"

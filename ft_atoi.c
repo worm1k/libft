@@ -23,7 +23,7 @@ int		ft_atoi(const char *nptr)
 	sign = 1;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\v')
 		i++;
-	if(nptr[i] == '+')
+	if (nptr[i] == '+')
 		i++;
 	else if (nptr[i] == '-')
 	{
@@ -35,5 +35,5 @@ int		ft_atoi(const char *nptr)
 		res = res * 10 + nptr[i] - '0';
 		i++;
 	}
-	return (sign*res);
+	return (sign * res);
 }
