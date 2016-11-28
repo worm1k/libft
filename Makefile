@@ -7,7 +7,7 @@ SRC = ft_*.c
 OBJ = $(SRC:.c=.o)
 
 
-all:
+all: $(NAME)
 	@echo ""
 $(NAME): 
 	gcc -c $(SRC)
@@ -17,6 +17,7 @@ clean:
 
 fclean: clean
 	rm -rf a
+	rm -rf libft.a
 
 re: fclean all
 	@echo "Done"

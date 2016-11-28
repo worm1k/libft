@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,24 +12,24 @@
 
 #include "libft.h"
 
-char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
+void					*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
-	int j;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	if (!needle[0])
-		return ((char *)haystack);
-	i = 0;
-	while (haystack[i] && i + ft_strlen(needle) - 1 < len)
+	d = (unsigned char *)dst;
+	s = (unsigned char *)src;
+	while (n > 0)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j])
+		*d = *s;
+		if (*d == (unsigned char) c)
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&(haystack[i]));
-			j++;
+			d++;
+			return ((void *)d);
 		}
-		i++;
+		d++;
+		s++;
+		n--;
 	}
 	return (NULL);
 }
