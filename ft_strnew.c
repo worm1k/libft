@@ -18,10 +18,10 @@ char		*ft_strnew(size_t size)
 	size_t	i;
 
 	i = 0;
-	res = (char *)malloc(size * sizeof(char));
+	res = (char *)malloc((size + 1) * sizeof(char));
 	if (!res)
 		return (NULL);
-	while (i < size)
+	while (i <= size)
 	{
 		res[i] = '\0';
 		i++;

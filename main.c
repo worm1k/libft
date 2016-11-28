@@ -23,14 +23,16 @@ int main()
 	for (int i = 0; i < 11; i++)
 		(helloWorld[i]?ft_putchar(helloWorld[i]): ft_putchar('0'));
 	ft_putchar('\n');
-*/
+
 	char testchr[11] = "abcd\0efghi";
 	char *c = ft_strchr(testchr, '\0');
 	ft_putstr("ft_strchr():\t"); ft_putstr(c);ft_putchar('\n');
 	for (int i = 0; i < 7; i++)
 		(c[i]?ft_putchar(c[i]): ft_putchar('0'));
 	ft_putchar('\n');
-/*
+	
+	
+	
 	ft_memmove(bye, helloWorld, 10);
 	ft_putstr("ft_memmove():\t"); 
 	for (int i = 0; i < 11; i++)
@@ -100,7 +102,9 @@ int main()
 	ft_putstr("ft_strrchr(W):\t");
 	ft_putendl(ft_strrchr(testchr, 'W'));
 
-
+	*/
+	ft_putnbr(strncmp("","",0));
+	/*
 	ft_putstr("ft_strcmp(a, abc):\t");
 	ft_putnbr(ft_strcmp("a", "abc"));
 	ft_putchar('\n');
