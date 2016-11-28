@@ -2,15 +2,16 @@ NAME = a
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-SRC = *.c
+SRC = ft_*.c
 
 OBJ = $(SRC:.c=.o)
 
 
-all: $(NAME)
+all:
 	@echo ""
 $(NAME): 
-	gcc -o a $(SRC)
+	gcc -c $(SRC)
+	ar rc libft.a $(OBJ)
 clean:
 	rm -rf *.o
 
