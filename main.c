@@ -103,7 +103,7 @@ int main()
 	ft_putendl(ft_strrchr(testchr, 'W'));
 
 	*/
-	ft_putnbr(strncmp("","",0));
+	//ft_putnbr(strncmp("","",0));
 	/*
 	ft_putstr("ft_strcmp(a, abc):\t");
 	ft_putnbr(ft_strcmp("a", "abc"));
@@ -338,5 +338,14 @@ int main()
 	ft_putnbr_fd(42, testfd);
 	ft_putendl_fd("UNIT test", testfd);
 	close(testfd);*/
+	char *ptr = (char *)malloc(5);
+	for (int i = 0; i < 5; i++)
+		*ptr++ = 'G';
+	*(ptr + i); // == ptr[i]
+	for (int i = -6; i <= 0; i++)
+		(ptr[i]?ft_putchar(ptr[i]): ft_putchar('0'));
+	ft_putchar('\n');
+
+
 	return (0);
 }

@@ -18,8 +18,10 @@ char		*ft_strmap(char const *s, char (*f)(char))
 	size_t	len;
 	char	*res;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
-	res = ft_strnew(len + 1);
+	res = ft_strnew(len);
 	if (!res)
 		return (NULL);
 	i = 0;
@@ -28,5 +30,6 @@ char		*ft_strmap(char const *s, char (*f)(char))
 		res[i] = (*f)(s[i]);
 		i++;
 	}
+	res[i] = '\0';
 	return (res);
 }

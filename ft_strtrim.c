@@ -18,9 +18,13 @@ char		*ft_strtrim(char const *s)
 	size_t	a;
 	size_t	b;
 
+	if (!s)
+		return (NULL);
 	a = 0;
 	while (s[a] == ' ' || s[a] == '\n' || s[a] == '\t')
 		a++;
+	if (s[a] == '\0')
+		return (ft_strnew(0));
 	b = ft_strlen(s) - 1;
 	while (s[b] == ' ' || s[b] == '\n' || s[b] == '\t')
 		b--;

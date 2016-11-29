@@ -35,7 +35,7 @@ char		*ft_itoa(int n)
 	char	*res;
 
 	i = ftt_getrank(n) - 1;
-	res = ft_strnew(i + 2);
+	res = ft_strnew(i + 1);
 	if (!res)
 		return (NULL);
 	if (n == -2147483648)

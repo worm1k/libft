@@ -53,6 +53,8 @@ char		**ft_strsplit(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
+	if (!s)
+		return (NULL);
 	res = (char **)malloc(sizeof(char *) * ftt_getsize(s, c) + 1);
 	if (!res)
 		return (NULL);

@@ -16,7 +16,11 @@ char		*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*res;
 
-	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!s1)
+		return (ft_strjoin("", s2));
+	if (!s2)
+		return (ft_strjoin(s1, ""));
+	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (!res)
 		return (NULL);
 	ft_strcpy(res, s1);
