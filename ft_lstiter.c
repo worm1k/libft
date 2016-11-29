@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,45 +12,14 @@
 
 #include "libft.h"
 
-static size_t	ftt_getrank(int n)
+void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	int			negative;
-	size_t		res;
+	t_list	*temp;
 
-	negative = (n < 0) ? 1 : 0;
-	if (n == 0)
-		return (1);
-	res = 0;
-	while (n)
+	while (lst)
 	{
-		res++;
-		n /= 10;
+		temp = lst->next;
+		(*f)(lst);
+		lst = temp;
 	}
-	return (res + negative);
-}
-
-char			*ft_itoa(int n)
-{
-	int			i;
-	char		*res;
-
-	i = ftt_getrank(n) - 1;
-	res = ft_strnew(i + 1);
-	if (!res)
-		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(res, "-2147483648"));
-	if (n == 0)
-		return (ft_strcpy(res, "0"));
-	if (n < 0)
-	{
-		res[0] = '-';
-		n *= -1;
-	}
-	while (n)
-	{
-		res[i--] = n % 10 + '0';
-		n /= 10;
-	}
-	return (res);
 }

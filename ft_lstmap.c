@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,45 +12,21 @@
 
 #include "libft.h"
 
-static size_t	ftt_getrank(int n)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int			negative;
-	size_t		res;
+	t_list	temp;
+	t_list	*res;
+	t_list	*curr;
 
-	negative = (n < 0) ? 1 : 0;
-	if (n == 0)
-		return (1);
-	res = 0;
-	while (n)
-	{
-		res++;
-		n /= 10;
-	}
-	return (res + negative);
-}
-
-char			*ft_itoa(int n)
-{
-	int			i;
-	char		*res;
-
-	i = ftt_getrank(n) - 1;
-	res = ft_strnew(i + 1);
-	if (!res)
+	if (!lst)
 		return (NULL);
-	if (n == -2147483648)
-		return (ft_strcpy(res, "-2147483648"));
-	if (n == 0)
-		return (ft_strcpy(res, "0"));
-	if (n < 0)
+	curr = res;
+	while (lst)
 	{
-		res[0] = '-';
-		n *= -1;
+		curr = (*f)(lst);
+		curr = curr->next;
+		lst = lst->next;
 	}
-	while (n)
-	{
-		res[i--] = n % 10 + '0';
-		n /= 10;
-	}
+	curr = NULL;
 	return (res);
 }

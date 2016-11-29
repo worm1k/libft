@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abykov <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,63 +12,23 @@
 
 #include "libft.h"
 
-static char		*ftt_strdup(char const *s, char c)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	char		*res;
-	size_t		i;
+	t_list	*res;
 
-	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	i = 0;
-	while (s[i] != c && s[i])
-	{
-		res[i] = s[i];
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}
-
-static size_t	ftt_getsize(char const *s, char c)
-{
-	size_t		i;
-	size_t		size;
-
-	i = 0;
-	size = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			size++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (size);
-}
-
-char			**ft_strsplit(char const *s, char c)
-{
-	char		**res;
-	size_t		i;
-	size_t		j;
-
-	if (!s)
-		return (NULL);
-	res = (char **)malloc(sizeof(char *) * ftt_getsize(s, c) + 1);
+	res = (t_list *)malloc(sizeof(t_list));
 	if (!res)
 		return (NULL);
-	i = 0;
-	j = 0;
-	while (s[i])
+	if (!content)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i] != '\0')
-			res[j++] = ftt_strdup(s + i, c);
-		while (s[i] != c && s[i])
-			i++;
+		res->content = NULL;
+		res->content_size = 0;
+		res->next = NULL;
+		return (res);
 	}
-	res[j] = (NULL);
+	res->content = malloc(content_size);
+	ft_memcpy(res->content, content, content_size);
+	res->content_size = content_size;
+	res->next = NULL;
 	return (res);
 }

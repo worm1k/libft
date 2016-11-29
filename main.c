@@ -337,7 +337,7 @@ int main()
 	int testfd = open("testfd.txt", O_CREAT | O_WRONLY);
 	ft_putnbr_fd(42, testfd);
 	ft_putendl_fd("UNIT test", testfd);
-	close(testfd);*/
+	close(testfd);
 	char *ptr = (char *)malloc(5);
 	for (int i = 0; i < 5; i++)
 		*ptr++ = 'G';
@@ -345,7 +345,9 @@ int main()
 	for (int i = -6; i <= 0; i++)
 		(ptr[i]?ft_putchar(ptr[i]): ft_putchar('0'));
 	ft_putchar('\n');
-
+	*/
+	char suka[10] = "ailB akuS";
+	ft_putendl(ft_strrev(suka));
 
 	return (0);
 }
