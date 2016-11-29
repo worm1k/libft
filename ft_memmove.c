@@ -14,9 +14,9 @@
 
 void					*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char *d;
-	char *s;
-	size_t i;
+	char				*d;
+	char				*s;
+	size_t				i;
 
 	d = (char *)dst;
 	s = (char *)src;
