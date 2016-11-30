@@ -345,9 +345,9 @@ int main()
 	for (int i = -6; i <= 0; i++)
 		(ptr[i]?ft_putchar(ptr[i]): ft_putchar('0'));
 	ft_putchar('\n');
-	*/
+	
 	char suka[10] = "ailB akuS";
 	ft_putendl(ft_strrev(suka));
-
+	*/
 	return (0);
 }
