@@ -1,7 +1,8 @@
 #include "libft.h"
+#include <stdio.h>
 
 int main()
-{
+{/*
 	ft_putendl("ft_putendl()");
 	ft_putstr("ft_putnbr(-2147483648):\t" ); ft_putnbr(-2147483648); ft_putchar('\n');
 	ft_putstr("ft_putnbr(-2147483647):\t" ); ft_putnbr(-2147483647); ft_putchar('\n');
@@ -24,6 +25,15 @@ int main()
 		(helloWorld[i]?ft_putchar(helloWorld[i]): ft_putchar('0'));
 	ft_putchar('\n');
 
+	char testchr[11] = "abcd\0efghi";
+	char *c = ft_strchr(testchr, '\0');
+	ft_putstr("ft_strchr():\t"); ft_putstr(c);ft_putchar('\n');
+	for (int i = 0; i < 7; i++)
+		(c[i]?ft_putchar(c[i]): ft_putchar('0'));
+	ft_putchar('\n');
+	
+	
+	
 	ft_memmove(bye, helloWorld, 10);
 	ft_putstr("ft_memmove():\t"); 
 	for (int i = 0; i < 11; i++)
@@ -93,7 +103,9 @@ int main()
 	ft_putstr("ft_strrchr(W):\t");
 	ft_putendl(ft_strrchr(testchr, 'W'));
 
-
+	*/
+	//ft_putnbr(strncmp("","",0));
+	/*
 	ft_putstr("ft_strcmp(a, abc):\t");
 	ft_putnbr(ft_strcmp("a", "abc"));
 	ft_putchar('\n');
@@ -327,5 +339,25 @@ int main()
 	ft_putnbr_fd(42, testfd);
 	ft_putendl_fd("UNIT test", testfd);
 	close(testfd);
+	char *ptr = (char *)malloc(5);
+	for (int i = 0; i < 5; i++)
+		*ptr++ = 'G';
+	*(ptr + i); // == ptr[i]
+	for (int i = -6; i <= 0; i++)
+		(ptr[i]?ft_putchar(ptr[i]): ft_putchar('0'));
+	ft_putchar('\n');
+	
+	char suka[10] = "ailB akuS";
+	ft_putendl(ft_strrev(suka));
+	
+	int a = 4;
+	int b = 10;
+	printf("a:%d b:%d\n", a, b);
+	ft_swap(&a, &b, sizeof(int));
+	printf("a:%d b:%d\n", a, b);
+	*/
+
+	char testup[] = "asd 77sasd word word1 1word 	#word";
+	ft_putendl(ft_strcapitalize(testup));
 	return (0);
 }

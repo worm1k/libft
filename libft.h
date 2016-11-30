@@ -68,7 +68,13 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
+int					ft_islower(int c);
+int					ft_isupper(int c);
 char				*ft_strrev(char *s);
+void				ft_memswap(void *a, void *b, size_t size);
+char				*ft_strtoupper(char *s);
+char				*ft_strtolower(char *s);
+char				*ft_strcapitalize(char *s);
 typedef struct		s_list
 {
 	void			*content;

@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <stdio.h>
 
 int main()
 {/*
@@ -348,6 +349,15 @@ int main()
 	
 	char suka[10] = "ailB akuS";
 	ft_putendl(ft_strrev(suka));
+	
+	int a = 4;
+	int b = 10;
+	printf("a:%d b:%d\n", a, b);
+	ft_swap(&a, &b, sizeof(int));
+	printf("a:%d b:%d\n", a, b);
 	*/
+
+	char testup[] = "asd 77sasd word word1 1word 	#word";
+	ft_putendl(ft_strcapitalize(testup));
 	return (0);
 }

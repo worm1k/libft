@@ -16,8 +16,12 @@ static char		*ftt_strdup(char const *s, char c)
 {
 	char		*res;
 	size_t		i;
+	size_t		len;
 
-	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	len = 0;
+	while (s[len] != c && s[len] != '\0')
+		len++;
+	res = (char *)malloc(sizeof(char) * (len + 1));
 	i = 0;
 	while (s[i] != c && s[i])
 	{
@@ -55,7 +59,7 @@ char			**ft_strsplit(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	res = (char **)malloc(sizeof(char *) * ftt_getsize(s, c) + 1);
+	res = (char **)malloc(sizeof(char *) * (ftt_getsize(s, c) + 1));
 	if (!res)
 		return (NULL);
 	i = 0;
