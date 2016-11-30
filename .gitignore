@@ -4,4 +4,6 @@
 a
 a.out
 *.exe*
-libft.h.gch
+*.gch
+*.o
+*.a
