@@ -17,8 +17,8 @@ void		ft_memswap(void *a, void *b, size_t size)
 	void	*temp;
 
 	temp = malloc(size);
-	memmove(temp, a, size);
-	memmove(a, b, size);
-	memmove(b, temp, size);
+	ft_memmove(temp, a, size);
+	ft_memmove(a, b, size);
+	ft_memmove(b, temp, size);
 	free(temp);
 }

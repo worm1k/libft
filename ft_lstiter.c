@@ -15,11 +15,15 @@
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	t_list	*temp;
+	t_list	*curr;
 
-	while (lst)
+	if (!lst || !f)
+		return ;
+	curr = lst;
+	while (curr)
 	{
-		temp = lst->next;
-		(*f)(lst);
-		lst = temp;
+		temp = curr->next;
+		(*f)(curr);
+		curr = temp;
 	}
 }
